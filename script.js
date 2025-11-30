@@ -16,11 +16,11 @@ function updateThemeButton() {
   const current = document.documentElement.getAttribute('data-theme') || 'light';
   if (themeBtn) {
     if (current === 'light') {
-      themeBtn.innerHTML = '<span style="font-size: 1.2rem;">🌙</span>';
+      themeBtn.innerHTML = '<i class="fas fa-moon"></i>';
       themeBtn.setAttribute('title', 'Switch to Dark Mode');
       themeBtn.setAttribute('aria-label', 'Switch to Dark Mode');
     } else {
-      themeBtn.innerHTML = '<span style="font-size: 1.2rem;">☀️</span>';
+      themeBtn.innerHTML = '<i class="fas fa-sun"></i>';
       themeBtn.setAttribute('title', 'Switch to Light Mode');
       themeBtn.setAttribute('aria-label', 'Switch to Light Mode');
     }
