@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - LinguaSign</title>
+  <meta name="description" content="Login to your LinguaSign account. Access premium sign language translation features.">
+  <meta name="keywords" content="login, sign language, translation, LinguaSign">
+  <meta name="theme-color" content="#0088dd">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="auth.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="brand">
+        <div class="brand-icon"><i class="fas fa-handshake"></i></div>
+        <span>LinguaSign</span>
+      </a>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme"><i class="fas fa-moon"></i></button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="auth-container">
+    <div class="auth-card">
+      <!-- Login Form -->
+      <div class="auth-form" id="login-form">
+        <div class="auth-header">
+          <h1>Welcome Back</h1>
+          <p>Sign in to access LinguaSign</p>
+        </div>
+
+        <form id="login-form-element">
+          <div class="form-group">
+            <label for="login-username">Username</label>
+            <input 
+              type="text" 
+              id="login-username" 
+              name="username" 
+              placeholder="Enter your username"
+              required
+            >
+            <span class="error-message" id="login-username-error"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="login-password">Password</label>
+            <div class="password-input-wrapper">
+              <input 
+                type="password" 
+                id="login-password" 
+                name="password" 
+                placeholder="Enter your password"
+                required
+              >
+              <button 
+                type="button" 
+                class="password-toggle" 
+                id="login-password-toggle"
+                aria-label="Toggle password visibility"
+              >
+                👁️
+              </button>
+            </div>
+            <span class="error-message" id="login-password-error"></span>
+          </div>
+
+          <div class="form-group checkbox">
+            <input 
+              type="checkbox" 
+              id="login-remember" 
+              name="remember"
+            >
+            <label for="login-remember">Remember me</label>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-large">
+            Sign In
+          </button>
+
+          <p class="form-divider">
+            <span>Don't have an account?</span>
+          </p>
+
+          <button 
+            type="button" 
+            class="btn btn-secondary btn-large"
+            id="switch-to-signup"
+          >
+            Create Account
+          </button>
+        </form>
+
+        <div class="success-message" id="login-success" style="display: none;">
+          ✓ Login successful! Redirecting...
+        </div>
+      </div>
+
+      <!-- Signup Form -->
+      <div class="auth-form" id="signup-form" style="display: none;">
+        <div class="auth-header">
+          <h1>Create Account</h1>
+          <p>Join LinguaSign today</p>
+        </div>
+
+        <form id="signup-form-element">
+          <div class="form-group">
+            <label for="signup-fullname">Full Name</label>
+            <input 
+              type="text" 
+              id="signup-fullname" 
+              name="fullname" 
+              placeholder="Enter your full name"
+              required
+            >
+            <span class="error-message" id="signup-fullname-error"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="signup-email">Email Address</label>
+            <input 
+              type="email" 
+              id="signup-email" 
+              name="email" 
+              placeholder="Enter your email"
+              required
+            >
+            <span class="error-message" id="signup-email-error"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="signup-username">Username</label>
+            <input 
+              type="text" 
+              id="signup-username" 
+              name="username" 
+              placeholder="Choose a username"
+              required
+            >
+            <span class="error-message" id="signup-username-error"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="signup-password">Password</label>
+            <div class="password-input-wrapper">
+              <input 
+                type="password" 
+                id="signup-password" 
+                name="password" 
+                placeholder="Create a strong password"
+                required
+              >
+              <button 
+                type="button" 
+                class="password-toggle" 
+                id="signup-password-toggle"
+                aria-label="Toggle password visibility"
+              >
+                👁️
+              </button>
+            </div>
+            <span class="error-message" id="signup-password-error"></span>
+            <div class="password-requirements">
+              <p>Password must contain:</p>
+              <ul>
+                <li id="req-length">✗ At least 8 characters</li>
+                <li id="req-uppercase">✗ At least one uppercase letter</li>
+                <li id="req-number">✗ At least one number</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="signup-confirm-password">Confirm Password</label>
+            <div class="password-input-wrapper">
+              <input 
+                type="password" 
+                id="signup-confirm-password" 
+                name="confirm-password" 
+                placeholder="Confirm your password"
+                required
+              >
+              <button 
+                type="button" 
+                class="password-toggle" 
+                id="signup-confirm-toggle"
+                aria-label="Toggle password visibility"
+              >
+                👁️
+              </button>
+            </div>
+            <span class="error-message" id="signup-confirm-error"></span>
+          </div>
+
+          <div class="form-group checkbox">
+            <input 
+              type="checkbox" 
+              id="signup-terms" 
+              name="terms"
+              required
+            >
+            <label for="signup-terms">I agree to the Terms and Conditions</label>
+            <span class="error-message" id="signup-terms-error"></span>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-large">
+            Create Account
+          </button>
+
+          <p class="form-divider">
+            <span>Already have an account?</span>
+          </p>
+
+          <button 
+            type="button" 
+            class="btn btn-secondary btn-large"
+            id="switch-to-login"
+          >
+            Sign In
+          </button>
+        </form>
+
+        <div class="success-message" id="signup-success" style="display: none;">
+          ✓ Account created successfully! Redirecting to login...
+        </div>
+      </div>
+    </div>
+
+    <!-- Authentication Info (Developer Reference) -->
+    <div class="auth-info">
+      <p><strong>Demo Account (Developer Access):</strong></p>
+      <p>Username: <code>Admin</code></p>
+      <p>Password: <code>AbdullahShafiq5757</code></p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-col">
+          <h4>LinguaSign</h4>
+          <p>Making sign language translation accessible to everyone.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="contact.html">Help Center</a></li>
+            <li><a href="#privacy">Privacy Policy</a></li>
+            <li><a href="#terms">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 LinguaSign. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="auth.js"></script>
+</body>
+</html>

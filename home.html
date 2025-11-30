@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LinguaSign - AI-Powered Sign Language Translation</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="auth-check.js"></script>
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="home.html" class="brand">
+        <span class="brand-icon"><i class="fas fa-sign-language"></i></span>
+        <span>LinguaSign</span>
+      </a>
+      <nav class="site-nav">
+        <a href="features.html">Features</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="demo.html">Demo</a>
+        <a href="api.html">API</a>
+        <a href="about.html">About</a>
+        <a href="blog.html">Blog</a>
+        <a href="careers.html">Careers</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="controls">
+        <button class="btn-icon" id="theme-toggle" onclick="toggleTheme()" title="Toggle theme"><i class="fas fa-moon"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="homepage-hero">
+    <video class="hero-video" autoplay muted loop>
+      <source src="sample.mp4" type="video/mp4">
+    </video>
+    <div class="homepage-hero-content">
+      <h1>Transform Sign Language into Text with AI</h1>
+      <p>Break down communication barriers with real-time, accurate sign language translation. Powered by advanced machine learning technology.</p>
+      
+      <div class="hero-buttons">
+        <button class="btn-hero primary" onclick="window.location.href='demo.html'">Try Demo Now</button>
+        <button class="btn-hero secondary" onclick="window.location.href='features.html'">Explore Features</button>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-number">98%</div>
+          <div class="stat-label">Translation Accuracy</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">50K+</div>
+          <div class="stat-label">Active Users</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">24/7</div>
+          <div class="stat-label">Real-Time Support</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section class="benefits-section">
+    <div class="container">
+      <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 1rem;">Why Choose LinguaSign?</h2>
+      <p style="text-align: center; color: var(--muted); font-size: 1.1rem; margin-bottom: 3rem;">Empowering communication for everyone</p>
+      
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon"><i class="fas fa-bolt"></i></div>
+          <h3>Lightning Fast</h3>
+          <p>Get real-time translations instantly. Our AI processes video streams at 60+ FPS for seamless communication.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon"><i class="fas fa-bullseye"></i></div>
+          <h3>Highly Accurate</h3>
+          <p>98% accuracy rate powered by state-of-the-art neural networks trained on thousands of sign language variations.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon"><i class="fas fa-globe"></i></div>
+          <h3>Multi-Language</h3>
+          <p>Support for multiple sign languages including ASL, BSL, LSF, and more. Expanding constantly.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="homepage-features">
+    <div class="container">
+      <div class="features-header">
+        <h2>Powerful Features</h2>
+        <p>Everything you need for seamless sign language translation</p>
+      </div>
+
+      <div class="features-showcase">
+        <div class="feature-showcase-card">
+          <div class="feature-icon-large"><i class="fas fa-video"></i></div>
+          <h3>Real-Time Video Processing</h3>
+          <p>Process live camera feeds with instant sign language detection and translation. Works on desktop, tablet, and mobile devices.</p>
+        </div>
+        <div class="feature-showcase-card">
+          <div class="feature-icon-large"><i class="fas fa-volume-high"></i></div>
+          <h3>Text to Speech</h3>
+          <p>Convert translated text to natural-sounding speech in multiple voices and languages for complete accessibility.</p>
+        </div>
+        <div class="feature-showcase-card">
+          <div class="feature-icon-large"><i class="fas fa-plug"></i></div>
+          <h3>API Integration</h3>
+          <p>Integrate LinguaSign into your applications with our powerful REST API. Comprehensive documentation included.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <div class="container">
+    <section class="homepage-cta">
+      <h2>Ready to Break Barriers?</h2>
+      <p>Join thousands of users and organizations making communication accessible to everyone.</p>
+      <button class="btn-hero primary" onclick="window.location.href='demo.html'">Start Your Free Trial</button>
+    </section>
+  </div>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials-section">
+    <div class="container">
+      <div class="testimonials-header">
+        <h2>What Our Users Say</h2>
+        <p>Real feedback from real users making a real difference</p>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"LinguaSign has completely transformed how I communicate in professional settings. The accuracy is incredible and the support team is fantastic!"</p>
+          <div class="testimonial-author">Sarah Johnson</div>
+          <div class="testimonial-role">Deaf Educator</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"As a parent of a deaf child, this technology has opened doors I never thought possible. We use it daily for family conversations."</p>
+          <div class="testimonial-author">Michael Chen</div>
+          <div class="testimonial-role">Parent & Advocate</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Implementing LinguaSign in our workplace has improved accessibility and inclusion. Our deaf employees feel genuinely heard."</p>
+          <div class="testimonial-author">Emma Rodriguez</div>
+          <div class="testimonial-role">HR Director</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>LinguaSign</h4>
+          <p>Breaking communication barriers with AI-powered sign language translation.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="demo.html">Demo</a></li>
+            <li><a href="api.html">API</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Accessibility</a></li>
+            <li><a href="#">Cookie Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 LinguaSign. All rights reserved. Making communication accessible for everyone.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

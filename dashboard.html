@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - LinguaSign</title>
+  <meta name="description" content="Your LinguaSign dashboard. Access your translation history and account settings.">
+  <meta name="theme-color" content="#0088dd">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="brand">
+        <div class="brand-icon"><i class="fas fa-handshake"></i></div>
+        <span>LinguaSign</span>
+      </a>
+      <nav class="site-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="features.html">Features</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme"><i class="fas fa-moon"></i></button>
+        <button id="logout-btn" class="btn-logout" aria-label="Logout">Logout</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="dashboard-container">
+    <!-- Welcome Section -->
+    <section class="dashboard-hero">
+      <div class="hero-content">
+        <h1>Welcome, <span id="user-greeting">User</span>!</h1>
+        <p>You're now connected to LinguaSign's premium features</p>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-card">
+          <span class="stat-icon"><i class="fas fa-clipboard"></i></span>
+          <div>
+            <span class="stat-number" id="translation-count">0</span>
+            <span class="stat-label">Translations</span>
+          </div>
+        </div>
+        <div class="stat-card">
+          <span class="stat-icon"><i class="fas fa-stopwatch"></i></span>
+          <div>
+            <span class="stat-number" id="daily-count">0</span>
+            <span class="stat-label">This Week</span>
+          </div>
+        </div>
+        <div class="stat-card">
+          <span class="stat-icon"><i class="fas fa-star"></i></span>
+          <div>
+            <span class="stat-number" id="accuracy">98</span>
+            <span class="stat-label">% Accuracy</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dashboard Content -->
+    <div class="dashboard-grid">
+      <!-- Left Column -->
+      <div class="dashboard-main">
+        <!-- Quick Access -->
+        <section class="dashboard-section">
+          <h2>Quick Access</h2>
+          <div class="quick-access-grid">
+            <a href="demo.html" class="quick-access-card">
+              <span class="quick-icon"><i class="fas fa-bullseye"></i></span>
+              <span class="quick-title">Start Translation</span>
+              <span class="quick-desc">Try our AI translator</span>
+            </a>
+            <a href="features.html" class="quick-access-card">
+              <span class="quick-icon"><i class="fas fa-sparkles"></i></span>
+              <span class="quick-title">Explore Features</span>
+              <span class="quick-desc">Learn what we offer</span>
+            </a>
+            <a href="api.html" class="quick-access-card">
+              <span class="quick-icon"><i class="fas fa-cog"></i></span>
+              <span class="quick-title">API Docs</span>
+              <span class="quick-desc">Developer resources</span>
+            </a>
+            <a href="contact.html" class="quick-access-card">
+              <span class="quick-icon"><i class="fas fa-message"></i></span>
+              <span class="quick-title">Support</span>
+              <span class="quick-desc">Get help anytime</span>
+            </a>
+          </div>
+        </section>
+
+        <!-- Recent Activity -->
+        <section class="dashboard-section">
+          <h2>Recent Activity</h2>
+          <div class="activity-list" id="activity-list">
+            <div class="activity-item">
+              <div class="activity-icon">✓</div>
+              <div class="activity-content">
+                <p class="activity-title">Account created</p>
+                <span class="activity-time" id="activity-time">just now</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Translation History -->
+        <section class="dashboard-section">
+          <h2>Translation History</h2>
+          <div class="history-list" id="history-list">
+            <p class="empty-state">No translations yet. Start translating to see your history!</p>
+          </div>
+        </section>
+      </div>
+
+      <!-- Right Column - Sidebar -->
+      <aside class="dashboard-sidebar">
+        <!-- Account Info -->
+        <div class="sidebar-card account-card">
+          <h3>Account Information</h3>
+          <div class="account-info">
+            <div class="info-item">
+              <label>Full Name</label>
+              <p id="account-fullname">Loading...</p>
+            </div>
+            <div class="info-item">
+              <label>Username</label>
+              <p id="account-username">Loading...</p>
+            </div>
+            <div class="info-item">
+              <label>Email</label>
+              <p id="account-email">Loading...</p>
+            </div>
+            <div class="info-item">
+              <label>Account Type</label>
+              <p id="account-type">Premium</p>
+            </div>
+            <div class="info-item">
+              <label>Member Since</label>
+              <p id="account-joined">Loading...</p>
+            </div>
+          </div>
+          <button class="btn btn-secondary" id="edit-profile-btn">Edit Profile</button>
+        </div>
+
+        <!-- Subscription -->
+        <div class="sidebar-card subscription-card">
+          <h3>Subscription</h3>
+          <div class="subscription-badge">Premium</div>
+          <p class="subscription-text">You have full access to all features</p>
+          <button class="btn btn-primary">View Plans</button>
+        </div>
+
+        <!-- Quick Settings -->
+        <div class="sidebar-card settings-card">
+          <h3>Settings</h3>
+          <ul class="settings-list">
+            <li><a href="#profile" class="settings-link"><i class="fas fa-user"></i> Profile Settings</a></li>
+            <li><a href="#security" class="settings-link"><i class="fas fa-lock"></i> Security</a></li>
+            <li><a href="#notifications" class="settings-link"><i class="fas fa-bell"></i> Notifications</a></li>
+            <li><a href="#preferences" class="settings-link"><i class="fas fa-cog"></i> Preferences</a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-col">
+          <h4>LinguaSign</h4>
+          <p>Making sign language translation accessible to everyone.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="contact.html">Help Center</a></li>
+            <li><a href="#privacy">Privacy Policy</a></li>
+            <li><a href="#terms">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 LinguaSign. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="auth.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>
